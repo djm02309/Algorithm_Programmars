@@ -27,7 +27,12 @@ public class Song {
         //value값을 기준으로 내림차순으로 정렬
         List<String> keySetList = new ArrayList<>(map.keySet());
         // 내림차순 //
-        Collections.sort(keySetList, (o1, o2) -> map.get(o2).compareTo(map.get(o1)));
+        Collections.sort(keySetList, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return map.get(o2).compareTo(map.get(o1));
+            }
+        });
 
         //검색하기 쉽게 고유번호:재생횟수 로 map만듦
         HashMap<Integer, Integer> pMap = new HashMap<>();
@@ -72,3 +77,78 @@ public class Song {
         return answer;
     }
 }
+////////////////////////////////////////////////////////////////////////
+/*
+이코드가 programmers 에서 돌아감
+위의 코드랑 같고 일부 정리만 했는데 위에껀 안되고 아래껀 잘돌아감
+///////////////////////////
+import java.util.*;
+class Solution {
+    public int[] solution(String[] genres, int[] plays) {
+        HashMap<String, Integer> map = new HashMap<>();
+        ArrayList anserArr = new ArrayList();
+        for(int i = 0; i < genres.length; i ++){
+            map.put(genres[i], map.getOrDefault(genres[i], 0) + plays[i]);
+        }
+
+        //value값을 기준으로 내림차순으로 정렬
+        List<String> keySetList = new ArrayList<>(map.keySet());
+        // 내림차순 //
+        Collections.sort(keySetList, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return map.get(o2).compareTo(map.get(o1));
+            }
+        });
+
+        HashMap<Integer, Integer> pMap = new HashMap<>();
+        HashMap<Integer, String> gMap = new HashMap<>();
+        for(int i = 0; i < genres.length; i++){
+            pMap.put(i, plays[i]);
+            gMap.put(i, genres[i]);
+        }
+
+        for(int i = 0; i<keySetList.size(); i++){
+            int first = -1, second = -1;
+            for(int k =0; k < genres.length; k++){
+                if(genres[k].equals(keySetList.get(i))){
+                    if(pMap.getOrDefault(first, -1) < pMap.get(k)){
+                        second = first;
+                        first = k;
+                    }
+                    else if(pMap.getOrDefault(first, -1) == pMap.get(k)){
+                        if(first > k){
+                            second = first;
+                            first = k;
+                        }
+                    }
+                    else if(pMap.getOrDefault(second, -1) < pMap.get(k)){
+                        second = k;
+                    }
+                    else if(pMap.getOrDefault(second, -1) == pMap.get(k)){
+                        if(k < second) {
+                            second = k;
+                        }
+                    }
+                    //모두 같은 경우
+                    else if(pMap.getOrDefault(first, -1) == pMap.get(k) && pMap.getOrDefault(second, -1) == pMap.get(k)){
+
+                    }
+                }
+            }
+            if(first != -1){
+                anserArr.add(first);
+                if(second != -1){
+                    anserArr.add(second);
+                }
+            }
+        }
+        int[] answer = new int[anserArr.size()];
+
+        for(int i = 0; i < anserArr.size(); i ++){
+            answer[i] = (int)anserArr.get(i);
+        }
+        return answer;
+    }
+}
+ */
