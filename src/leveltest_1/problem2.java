@@ -11,14 +11,15 @@ public class problem2 {
                 num = array[i] - '0'; //점수
                 i++;
             }
-            if(array[i]=='S'||array[i]=='D'||array[i]=='T'){
-                switch (array[i]){
-                    case 'S' :
-                        num = num * 1;
-                    case 'D' :
-                        num = num * num ; //제곱
-                    case 'T' :
-                        num = num * num * num; //세제곱
+            if(array[i]=='S' || array[i]=='D' || array[i]=='T'){
+                if(array[i]=='S'){
+                    num = num * 1;
+                }
+                else if( array[i]=='D'){
+                    num = num * num ; //제곱
+                }
+                else{
+                    num = num * num * num; //세제곱
                 }
                 i++;
             }
@@ -45,7 +46,7 @@ public class problem2 {
     }
     public static void main(String[] args){
         problem2 sol = new problem2();
-        String a="1S2D*3T";
+        String a="1S2D*3T"; //37
         System.out.println(sol.solution(a));
     }
 }
