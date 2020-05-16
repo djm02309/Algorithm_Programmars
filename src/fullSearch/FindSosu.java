@@ -3,13 +3,14 @@ package fullSearch;
 출처: https://programmers.co.kr/learn/courses/30/lessons/42839
 * */
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class FindSosu {
-    ArrayList<Integer> list = new ArrayList();
-
+//    ArrayList<Integer> list = new ArrayList();
+    Set<Integer> set = new TreeSet<Integer>();
+    static int AAA=0;
     public int solution(String numbers) {
-        int answer = 0;
+        int answer;
         int[] arr = new int[numbers.length()];
         for (int i = 0; i < numbers.length(); i++) {
             arr[i] = numbers.charAt(i) - '0';
@@ -20,7 +21,7 @@ public class FindSosu {
             int[] output = new int[i];
             perm(arr, output, visited, 0, numbers.length(), i);
         }
-        answer = isPrime(list);
+        answer = isPrime(set);
         return answer;
     }
 
@@ -29,11 +30,8 @@ public class FindSosu {
             int sum = 0;
             for (int i = output.length-1, dan = 1; i >= 0; i--, dan *= 10) {
                 sum += output[i] * dan;
-                //System.out.print(output[i]);
             }
-            //System.out.println();
-            list.add(sum);
-
+            set.add(sum);
             return;
         }
 
@@ -46,34 +44,34 @@ public class FindSosu {
                 visited[i] = false;
             }
         }
-
     }
 
-    public int isPrime(ArrayList listA) {
-        ArrayList result = new ArrayList();
-        for(int k =0; k < listA.size(); k++) {
-            int n = (int) listA.get(k);
-            for (int i = 2; i <= n; i++) {
+    public int isPrime(Set listA) {
+//        ArrayList result = new ArrayList();
+
+        Iterator it = set.iterator();
+        while(it.hasNext()){
+            int n = (int) it.next();
+            if(n > 1) {
                 boolean isPrime = true;
-                // 초기 값
-                // for(int j=2; j<=i/2; j++) {
-                for (int j = 2; j * j <= i; j++) {
-                    if (i % j == 0) {
-                        // 소수가 아니다.
-                        isPrime = false;
-                        break;
+                    for (int j = 2; (j * j) <= n; j++) {
+                        if (n % j == 0) {
+                            // 소수가 아니다.
+                            isPrime = false;
+                            break;
+                        }
                     }
-                }
                 if (isPrime) {
-                    result.add(n);
+//                    result.add(n);
+                    AAA++;
                 }
             }
         }
-        return result.size();
+        return AAA;
     }
     public static void main(String[] args){
         int[] arr = {1,2,3,4};
         FindSosu sosu = new FindSosu();
-        sosu.solution("17");
+        sosu.solution("011");
     }
 }
