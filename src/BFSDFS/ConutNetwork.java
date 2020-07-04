@@ -1,10 +1,6 @@
 package BFSDFS;
 
-import javax.swing.*;
-
 public class ConutNetwork {
-
-
     public int solution(int n, int[][] computers) {
         boolean[] visit = new boolean[computers.length];
         int answer = 0;
