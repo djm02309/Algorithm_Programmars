@@ -1,4 +1,4 @@
-package BFSDFS;
+package HighPoint.BFSDFS;
 
 public class TransWord {
     int count=0;

@@ -1,4 +1,4 @@
-package fullSearch;
+package HighPoint.fullSearch;
 /*문제 설명
 숫자 야구 게임이란 2명이 서로가 생각한 숫자를 맞추는 게임입니다. 게임해보기
 

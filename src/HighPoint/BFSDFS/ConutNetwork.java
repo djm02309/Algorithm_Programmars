@@ -1,4 +1,4 @@
-package BFSDFS;
+package HighPoint.BFSDFS;
 
 public class ConutNetwork {
     public int solution(int n, int[][] computers) {

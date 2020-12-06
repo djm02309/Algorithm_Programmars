@@ -1,4 +1,4 @@
-package hash;
+package HighPoint.hash;
 
 public class PhoneNumber {
     public boolean solution(String[] phone_book) {

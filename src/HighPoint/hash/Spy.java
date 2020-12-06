@@ -1,4 +1,4 @@
-package hash;
+package HighPoint.hash;
 
 import java.util.HashMap;
 import java.util.Set;

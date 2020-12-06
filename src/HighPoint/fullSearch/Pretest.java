@@ -1,4 +1,4 @@
-package fullSearch;
+package HighPoint.fullSearch;
 
 import java.util.ArrayList;
 import java.util.Arrays;

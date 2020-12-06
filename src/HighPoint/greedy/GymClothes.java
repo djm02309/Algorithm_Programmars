@@ -1,4 +1,4 @@
-package greedy;
+package HighPoint.greedy;
 
 public class GymClothes {
     public static void main(String[] args){

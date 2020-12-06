@@ -1,4 +1,4 @@
-package greedy;
+package HighPoint.greedy;
 
 public class JoyStick {
     public int solution(String name) {

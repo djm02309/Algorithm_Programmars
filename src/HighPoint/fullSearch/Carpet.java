@@ -1,4 +1,4 @@
-package fullSearch;
+package HighPoint.fullSearch;
 
 public class Carpet {
     public int[] solution(int brown, int yellow) {

@@ -1,4 +1,4 @@
-package greedy;
+package HighPoint.greedy;
 
 public class BigNum {
     public String solution(String number, int k) {

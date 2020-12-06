@@ -1,4 +1,4 @@
-package BFSDFS;
+package HighPoint.BFSDFS;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,7 +65,7 @@ public class Flight {
 //        }
 //        String target="";
 //        if(list.size()>0){  //list정렬해서 더 먼저 가야하는곳 정하기
-//            Collections.sort(list);
+//            Collections.HighPoint.sort(list);
 //            target = (String) list.get(0);
 //            arr.add(target);
 //        }

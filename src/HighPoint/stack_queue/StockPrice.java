@@ -1,4 +1,4 @@
-package stack_queue;
+package HighPoint.stack_queue;
 import java.util.Stack;
 
 public class StockPrice {

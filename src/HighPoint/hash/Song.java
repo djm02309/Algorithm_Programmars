@@ -1,4 +1,4 @@
-package hash;
+package HighPoint.hash;
 
 import java.util.*;
 
@@ -94,7 +94,7 @@ class Solution {
         //value값을 기준으로 내림차순으로 정렬
         List<String> keySetList = new ArrayList<>(map.keySet());
         // 내림차순 //
-        Collections.sort(keySetList, new Comparator<String>() {
+        Collections.HighPoint.sort(keySetList, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
                 return map.get(o2).compareTo(map.get(o1));

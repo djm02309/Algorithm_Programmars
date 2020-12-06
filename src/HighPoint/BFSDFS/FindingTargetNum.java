@@ -1,4 +1,4 @@
-package BFSDFS;
+package HighPoint.BFSDFS;
 
 public class FindingTargetNum {
     static int answer =0;

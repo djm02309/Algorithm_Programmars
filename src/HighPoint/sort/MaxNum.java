@@ -1,4 +1,4 @@
-package sort;
+package HighPoint.sort;
 
 import java.util.*;
 
@@ -57,7 +57,7 @@ public class MaxNum {
  *         for(int i =0; i< input.length(); i++){
  *             arr[i] = Integer.parseInt(Character.toString(input.charAt(i)));
  *         }
- *         Arrays.sort(arr, Collections.reverseOrder());
+ *         Arrays.HighPoint.sort(arr, Collections.reverseOrder());
  *         String answer = "";
  *         for(int i =0; i< arr.length; i++){
  *             answer += arr[i];
